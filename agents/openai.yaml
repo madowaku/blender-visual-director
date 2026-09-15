@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Visual Director"
+  short_description: "BlenderMCP creation with selective visual review"
+  default_prompt: "Use $blender-visual-director to create or revise this Blender scene with batched MCP edits and only the visual checkpoints needed to judge quality."
