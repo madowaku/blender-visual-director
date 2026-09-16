@@ -32,6 +32,8 @@ Keep responsibilities separate: the outer target loop owns target generation, cr
 
 If a Visual Observer implementation is available, prefer evidence that satisfies [visual-observer-spec.md](references/visual-observer-spec.md). Its first job is trustworthy scoped state, delivery-camera capture and freshness metadata, not aesthetic scoring. Fall back to existing MCP/render paths or Computer Use only when they better answer the actual visual question.
 
+For controlled Dream Loop/target-matching comparisons, read [target-loop-evaluation.md](references/target-loop-evaluation.md). Keep the target, starting scene, critic rubric and stopping rule fixed across conditions.
+
 ## Choose observation deliberately
 
 Checkpoint candidates: completed blockout; major proportion changes; silhouette changes; material or lighting changes; camera composition changes; final review. Combine overlapping checkpoints and select only the views needed for the change.
