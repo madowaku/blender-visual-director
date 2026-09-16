@@ -1,6 +1,6 @@
 ---
 name: blender-visual-director
-description: Direct Blender 3D creation and revision with BlenderMCP, batching edits and choosing minimal visual evidence for quality review. Use for modeling, materials, lighting, and camera work where visual quality matters.
+description: Direct Blender 3D creation and revision with BlenderMCP, batching edits and choosing minimal visual evidence for quality review or target-image matching. Use for modeling, materials, lighting, camera work, and visual refinement where quality matters.
 metadata:
   short-description: BlenderMCP production with selective visual review
 ---
@@ -23,6 +23,14 @@ Read [blender-mcp-strategy.md](references/blender-mcp-strategy.md) for the audit
 4. **Observe when it resolves a visual question:** Select the smallest adequate view and modality. Reuse existing evidence only if the scene, view, and settings relevant to the question are unchanged.
 5. **Correct:** Describe visible defects concretely, group their fixes through MCP, check the affected state, and reobserve the views invalidated by those fixes.
 6. **Final visual review:** Inspect fresh evidence of the deliverable after the last relevant edit. For a final render, inspect that render. Report unobserved aspects explicitly if image retrieval is unavailable; do not claim visual approval from JSON alone.
+
+## Work against a visual target
+
+When the user supplies a target image, asks for Dream Loop-style refinement, or another skill/orchestrator provides target + critic feedback, read [dream-loop-integration.md](references/dream-loop-integration.md).
+
+Keep responsibilities separate: the outer target loop owns target generation, critic comparison and exit/rethink decisions; this skill owns Blender edits, evidence selection and freshness. Convert related critic gaps into one coherent MCP correction batch and one or a few explicit verification questions. Do not create a duplicate critic or duplicate screenshots through multiple channels.
+
+If a Visual Observer implementation is available, prefer evidence that satisfies [visual-observer-spec.md](references/visual-observer-spec.md). Its first job is trustworthy scoped state, delivery-camera capture and freshness metadata, not aesthetic scoring. Fall back to existing MCP/render paths or Computer Use only when they better answer the actual visual question.
 
 ## Choose observation deliberately
 
